@@ -1,8 +1,22 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `React Cebu Joins Gatsby Challenge`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    blog: [
+      {
+        title: "1st blog",
+        body: "Whole new blog",
+      },
+      {
+        title: "2nd blog",
+        body: "Whole new blog",
+      },
+      {
+        title: "3rd blog",
+        body: "Whole new blog",
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -11,6 +25,28 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        // CommonMark mode (default: true)
+        commonmark: true,
+        // Footnotes mode (default: true)
+        footnotes: true,
+        // Pedantic mode (default: true)
+        pedantic: true,
+        // GitHub Flavored Markdown mode (default: true)
+        gfm: true,
+        // Plugins configs
+        plugins: [],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/content`,
       },
     },
     `gatsby-transformer-sharp`,
