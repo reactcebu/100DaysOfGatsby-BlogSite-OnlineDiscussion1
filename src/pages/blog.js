@@ -1,6 +1,6 @@
 import React from "react"
 
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 
 const Blog = ({ data }) => {
   const blog = data.allMarkdownRemark.edges.map(edges => edges.node)
